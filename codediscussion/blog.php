@@ -15,25 +15,23 @@
 </head><body>
     <?php include 'partials/dbconnect.php'; ?>
     <?php include 'partials/navbar.php'; ?> 
+    
     <div class="container my-5">
     <?php
                                             $id = $_GET['blogid'];
                                             $sql = "SELECT * FROM `blog` WHERE blog_id=$id";
                                             $result = mysqli_query($conn, $sql);
                                             while ($row = mysqli_fetch_assoc($result)) {
-                                                echo '<div class="container col-xxl-8 px-4 py-5">
-                                                <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-                                                  <div class="col-10 col-sm-8 col-lg-6">
-                                                    <img src="bhttps://source.unsplash.com/random/500×600/?coding,' . $row['blog_language'] . ',python,javascript,webdevelopment" class="d-block mx-lg-auto img-fluid" alt="' . $row['blog_name'] . '" width="700" height="500" loading="lazy">
-                                                  </div>
-                                                  <div class="col-lg-6">
-                                                    <h1 class="display-5 fw-bold lh-1 mb-3">' . $row['blog_name'] . '</h1></br><h4 class="display-5 fw-bold lh-1 mb-3">' . $row['blog_language'] . '</h4></br>
-                                                    <p class="lead">' . $row['blog_description'] . '</p>
-                                                    <div class="d-grid gap-2 d-md-flex justify-content-md-start"></br>
-                                                    <p>Posted by -' . $row['blog_writer'] . ' at ' . $row['blog_time'] . '
-                                                    </div>
-                                                  </div>
-                                                </div>
+                                                echo '<div class="jumbotron">
+                                                <h1 class="display-4">' . $row['blog_name'] . '</h1>
+                                                <img src="partials/img/card'.$id.'" alt="">
+                                                <hr class="my-4">
+                                                <h4 class="display-6">' . $row['blog_language'] . '</h4>
+                                                <p class="lead">' . $row['blog_description'] . '</p>
+                                                <hr class="my-4">
+                                                <p class="lead">
+                                                <h3 style="color:blue;">Posted by -' . $row['blog_writer'] . ' at ' . $row['blog_time'] . '</h3>
+                                                </p>
                                               </div>';
                                             }
                                             ?>

@@ -23,12 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $row['first_name'] . " " . $row['last_name'];
             $_SESSION['loggedin'] = true;
             $_SESSION['name'] = $name;
-            header("Location: /codediscussion/index.php");
+            header("Location:/index.php");
             exit();
         } else {
-            header("Location: /codediscussion/index.php?login=false");
+            header("Location:/index.php?login=false");
         }
     } else {
         // echo "unable";
     }
 }
+?>

@@ -17,13 +17,17 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $blog_title = $_POST['blog_title'];
         $blog_title  = str_replace("<", "&lt;", $blog_title);
-        $blog_title  = str_replace(">", "&gt;", $blog_title);        $blog_content = $_POST['blog_content'];
+        $blog_title  = str_replace(">", "&gt;", $blog_title);        
+        $blog_content = $_POST['blog_content'];
         $blog_content = str_replace("<", "&lt;", $blog_content);
-        $blog_content = str_replace(">", "&gt;", $blog_content);        $blog_writer = $_POST['blog_writer'];
+        $blog_content = str_replace(">", "&gt;", $blog_content);        
+        $blog_writer = $_POST['blog_writer'];
         $blog_writer = str_replace("<", "&lt;", $blog_writer);
-        $blog_writer = str_replace(">", "&gt;", $blog_writer);        $blog_language = $_POST['blog_language'];
+        $blog_writer = str_replace(">", "&gt;", $blog_writer);        
+        $blog_language = $_POST['blog_language'];
         $blog_language = str_replace("<", "&lt;", $blog_language);
-        $blog_language = str_replace(">", "&gt;", $blog_language);        $sql = "INSERT INTO `blog` (`blog_name`, `blog_language`, `blog_description`, `blog_writer`) VALUES ('$blog_title', '$blog_language','$blog_content','$blog_writer');";
+        $blog_language = str_replace(">", "&gt;", $blog_language);        
+        $sql = "INSERT INTO `blog` (`blog_name`, `blog_language`, `blog_description`, `blog_writer`) VALUES ('$blog_title', '$blog_language','$blog_content','$blog_writer');";
         $result = mysqli_query($conn, $sql);
         if ($result) {
             $showresult = true;

@@ -19,7 +19,7 @@ echo '<div class="mb-0  pb-0">
       $sql="SELECT category_name,category_id FROM `categories` LIMIT 5";
       $result=mysqli_query($conn,$sql);
       while($row=mysqli_fetch_assoc($result)){
-       echo '<li class="nav-item mb-2 my-2"><a href="/codediscussion/threadlist.php?catid='.$row['category_id'].'" class="nav-link p-0 " style="color:white;" >' .substr($row['category_name'], 0, 20) . '</a></li>';
+       echo '<li class="nav-item mb-2 my-2"><a href="threadlist.php?catid='.$row['category_id'].'" class="nav-link p-0 " style="color:white;" >' .substr($row['category_name'], 0, 20) . '</a></li>';
       }
     echo  '</ul>
     </div>
@@ -30,7 +30,7 @@ echo '<div class="mb-0  pb-0">
       $sql="SELECT blog_name,blog_id FROM `blog` LIMIT 5";
       $result=mysqli_query($conn,$sql);
       while($row=mysqli_fetch_assoc($result)){
-        echo '<li class="nav-item mb-2 my-2"><a href="/codediscussion/partials/blog?blogid='.$row['blog_id'].'" class="nav-link p-0 " style="color:white;" >' . substr($row['blog_name'], 0, 25) . '</a></li>';
+        echo '<li class="nav-item mb-2 my-2"><a href="partials/blog?blogid='.$row['blog_id'].'" class="nav-link p-0 " style="color:white;" >' . substr($row['blog_name'], 0, 25) . '</a></li>';
       }
     echo  '</ul>
     </div>
@@ -45,3 +45,4 @@ echo '<div class="mb-0  pb-0">
   </div>
 </footer>
 </div>';
+?>

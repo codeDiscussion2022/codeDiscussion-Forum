@@ -2,6 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $showerror = false;
     $showalert = false;
+
     include 'dbconnect.php';
     $user_email = $_POST["email"];
     $user_email = str_replace("<","&lt;",$user_email);
@@ -49,7 +50,7 @@ else{
         $result = mysqli_query($conn, $sql);
         if ($result) {
             $showalert = true;
-            header("Location:/codediscussion/index.php?signupsuccess=true");
+            header("Location:/index.php?signupsuccess=true");
             exit();
         }
     }
@@ -57,6 +58,6 @@ else{
         $showerror=true;
        
     }
-} header("Location:/codediscussion/index.php?signupsuccess=false");
+} header("Location:/index.php?signupsuccess=false");
 }
 ?>

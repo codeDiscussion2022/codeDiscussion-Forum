@@ -6,7 +6,7 @@
                 <h5 class="modal-title" id="signupModalLabel">SignUp</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="/codediscussion/partials/handlesignup.php" method="post">
+            <form action="partials/handlesignup.php" method="post">
             <div class="modal-body">
                     <div class="col-12 my-2">
                         <label for="email" class="form-label">Email <span class="text-muted">*</span></label>
